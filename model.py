@@ -2,6 +2,8 @@ from keras.models import Model
 from keras.layers import Input, LSTM, Dense, Dropout
 from keras import optimizers, metrics, backend as K
 
+import tensorflow as tf
+
 # For use with truncated metrics,
 # take maxlen from the validation set.
 # Hacky and hard-coded for now.
