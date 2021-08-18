@@ -107,11 +107,11 @@ if __name__ == '__main__':
         val_loader = datagen(val_encoder_batch,
                              val_decoder_batch, val_target_batch)
     
-        model.fit_generator(train_loader,
-                            steps_per_epoch=train_steps,
-                            epochs=1, verbose=1,
-                            validation_data=val_loader,
-                            validation_steps=val_steps)
+        model.fit(train_loader,
+                  steps_per_epoch=train_steps,
+                  epochs=1, verbose=1,
+                  validation_data=val_loader,
+                  validation_steps=val_steps)
 
         # On epoch end - decode a batch of misspelled tokens from the
         # validation set to visualize speller performance.
