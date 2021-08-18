@@ -64,7 +64,8 @@ def seq2seq(hidden_size, nb_input_chars, nb_target_chars):
     model = Model(inputs=[encoder_inputs, decoder_inputs],
                   outputs=decoder_outputs)
     
-    adam = optimizers.Adam(lr=0.001, decay=0.0)
+    #adam = optimizers.Adam(lr=0.001, decay=0.0)
+    adam = tf.keras.optimizers.Adam(learning_rate=0.001, decay=0.0, name='Adam')
     model.compile(optimizer=adam, loss='categorical_crossentropy',
                   metrics=['accuracy', truncated_acc, truncated_loss])
     
